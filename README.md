@@ -1,8 +1,9 @@
+<h1> cs101 </h1>
 cs101
 My Others Programming Lessons
 
-- HTML-JAVASCRIPT
-- RUBY-RAILS
-- DATABASES
-- GIT
-- LINUX
+- HTML-JavaScript
+- Ruby-Rail
+- Databases
+- Git
+- Linux
