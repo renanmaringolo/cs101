@@ -1,5 +1,5 @@
 <h1> cs101 </h1>
-My Others Programming Lessons
+<hr>My Others Programming Lessons<hr>
 
 - HTML-JavaScript
 - Ruby-Rail
