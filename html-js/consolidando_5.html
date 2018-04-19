@@ -14,9 +14,11 @@
         return peso / (altura * altura);
     }
 
-    var imcRenan = calculaImc(80, 1.70);
-    var imcAmigo = calculaImc(70, 1.65);
-    var totalImc = imcRenan + imcAmigo;
+    var nome = prompt("Digite seu nome:");
+    var alturaInformada = prompt(nome + ", digite sua altura:");
+    var pesoInformado = prompt(nome + ", digite seu peso:");
+    var imc = calculaImc (alturaInformada, pesoInformado);
 
-    document.write(" O total de IMC's é: " + totalImc);
+    mostra(nome + ", seu IMC é: " + imc);
+ 
 </script>
