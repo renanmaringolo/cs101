@@ -10,7 +10,7 @@
         pulaLinha();
     }
 
-    function calculaImc(peso, altura) {
+    function calculaImc(altura, peso) {
         return peso / (altura * altura);
     }
 
@@ -20,5 +20,18 @@
     var imc = calculaImc (alturaInformada, pesoInformado);
 
     mostra(nome + ", seu IMC é: " + imc);
+
+    
+    if(imc > 35) {
+        mostra("Seu IMC está acima da média.");
+    }
+
+    if(imc < 18.5) {
+        mostra("Seu IMC está abaixo da média");
+    }
+
+    if(imc >= 18.5 && imc <= 35) { 
+        mostra("Seu IMC está excelente!");    
+    }
  
 </script>
