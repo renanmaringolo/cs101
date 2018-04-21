@@ -1,0 +1,23 @@
+<meta charset="UTF-8">
+<script>
+
+    function pulaLinha() {
+        document.write("<br>", "<hr>", "<br>");
+    }
+
+    function mostra(frase) {
+        document.write("<big>", frase, "</big>");
+        pulaLinha();
+    }
+
+    var contador = parseInt(prompt("Digite um número de 0 a 20 para contagem"));
+    while(contador >= 0 && contador <= 20) {
+        if(contador != 33 && contador != 37) {
+            mostra("Seu número atual é: " + contador);
+        }
+        contador = contador - 1;
+    }
+    
+    mostra("FIM!");
+
+</script>  

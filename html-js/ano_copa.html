@@ -1,0 +1,21 @@
+<meta charset="UTF-8">
+<script>
+
+    function pulaLinha() {
+        document.write("<br>", "<hr>", "<br>");
+    }
+
+    function mostra(frase) {
+        document.write("<big>", frase, "</big>");
+        pulaLinha();
+    }
+    var limite = parseInt(prompt("Digite o ano limite que deseja buscar"));
+    var anoCopa = 1930;
+
+    while(anoCopa <= limite) {
+        mostra("Teve copa em: " + anoCopa);
+        anoCopa = anoCopa + 4;
+    }
+    mostra("Ufa! Esses foram os anos de copa até " + limite);
+
+</script>    
