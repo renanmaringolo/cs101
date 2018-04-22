@@ -1,0 +1,52 @@
+<meta charset="UTF-8">
+<input/>
+<button>Compare meu segredo!</button>
+
+<script>
+    var input = document.querySelector("input");
+    input.focus();
+
+    function sorteia(n) {
+        return Math.round(Math.random() * n);
+    }
+    
+    function verifica() {
+        if(input.value == segredo ) {
+            alert("VOCÊ ACERTOU!!!");
+        } else {
+            alert("VOCÊ ERROU!!!");
+        }
+        input.value = "";
+        input.focus();
+    }
+
+    function pulaLinha() {
+        document.write("<br>", "<hr>", "<br>");
+    }
+
+    function mostra(frase) {
+        document.write("<big>", frase, "</big>");
+        pulaLinha();
+    }
+
+    var button = document.querySelector("button");
+    button.onclick = verifica;
+
+    var tentativas = 3;
+    var numeroPensado = sorteia(10);
+    while(tentativas <= 3) {
+        var numeroPensado = sorteia(10);
+        var chute = parseInt(prompt("Digite seu chute!"));
+    
+        if(chute == numeroPensado) {
+            mostra("Você acertou!!!");
+        break   
+        } else {
+            mostra("Você errou! O número pensado é: " + numeroPensado);
+        }
+        tentativas++
+    }
+    mostra("FIM!")
+
+
+</script>
