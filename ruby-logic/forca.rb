@@ -9,7 +9,7 @@ end
 
 def escolhe_palavra_secreta
     puts "Escolhendo palavra secreta..."
-    palavra_secreta = "programador"
+    palavra_secreta = "ruby"
     puts "Palavra secreta com #{palavra_secreta.size} letras... boa sorte!"
     palavra_secreta
 end
@@ -88,7 +88,5 @@ nome = da_boas_vindas
 
 loop do
     joga nome
-    if nao_quer_jogar?
-        break
-    end    
+    break if nao_quer_jogar?
 end
