@@ -33,7 +33,7 @@ end
 
 def pede_numero(chutes, tentativa, limite_de_tentativas)
     puts "\n\n\n\n\n"
-    puts "Tentativa #{tentativa} #{limite_de_tentativas}"
+    puts "Tentativa #{tentativa} de #{limite_de_tentativas}"
     puts "Chute até agora " + chutes.to_s
     puts "Entre com o número"
     chute = gets
