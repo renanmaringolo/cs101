@@ -8,7 +8,7 @@ end
 
 def sorteia_numero_secreto
     puts "Escolhendo um número secreto..."
-    sorteado = 175
+    sorteado = rand(200)
     puts "Escolhido, que tal adivinhar nosso número secreto hoje?"
     sorteado
 end    
@@ -49,8 +49,9 @@ chutes = []
 for tentativa in 1..limite_de_tentativas
     chute = pede_um_numero chutes, tentativa, limite_de_tentativas
     chutes << chute
-    pontos_a_perder = (chute - numero_secreto) / 2.0
+    pontos_a_perder = (chute - numero_secreto).abs / 2.0
     pontos_ate_agora -= pontos_a_perder
+
     if verifica_se_acertou numero_secreto, chute 
         break
     end
