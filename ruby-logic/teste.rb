@@ -5,23 +5,17 @@ end
 chutes = []
 
 chute = 176
-tentativa = 1
-chutes[tentativa - 1] = chute
+chutes << chute
 
 chute = 180
-tentativa = 2
-chutes[tentativa - 1] = chute
+chutes << chute
 
 chute = 140
-tentativa = 3
-chutes[tentativa - 1] = chute
+chutes << chute
 
+puts chutes
 
-puts chutes[0]
-puts chutes[1]
-puts chutes[2]
-
-
-for contador in 0..(tentativa-1)
-  puts "Chute: " + chutes[contador].to_s  
-end  
+nome = gets.strip
+puts nome + " tem " + nome.size.to_s + "caracteres"
+puts "Resultado: "
+puts nome[9]
