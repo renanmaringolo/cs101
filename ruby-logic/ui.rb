@@ -10,15 +10,15 @@ def avisa_letra_encontrada(total_encontrado)
     puts "Letra encontrada #{total_encontrado} vezes."
 end
 
-def avisa_se_acertou
+def avisa_acertou_palavra
     puts "Parabéns, você acertou!"    
 end
 
-def avisa_se_errou
+def avisa_errou_palavra
     puts "ERROUUUUUUUUU"
 end
 
-def avisa_pontos_ate_agora(pontos_ate_agora)
+def avisa_pontos(pontos_ate_agora)
     puts "Você ganhou #{pontos_ate_agora} pontos."
 end
 
@@ -44,10 +44,11 @@ def nao_quer_jogar?
     nao_quero_jogar = quero_jogar.upcase == "N"
 end   
 
-def cabecalho_de_tentativa(chutes, erros)
+def cabecalho(chutes, erros, mascara)
     puts "\n\n\n\n"
-    puts "Erros até agora #{erros}."
-    puts "Chutes até agora #{chutes}."
+    puts "Palavra secreta: #{mascara}"
+    puts "Erros até agora: #{erros}."
+    puts "Chutes até agora: #{chutes}."
 end    
 
 def pede_um_chute

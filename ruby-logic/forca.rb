@@ -1,7 +1,19 @@
 require_relative 'ui'
 
-def pede_um_chute_valido(chutes, erros)
-    cabecalho_de_tentativa chutes, erros
+def palavra_mascarada(chutes, palavra_secreta)
+    mascara = ""
+    for letra in palavra_secreta.chars
+        if chutes.include? letra
+            mascara << letra
+        else
+            mascara << "_"
+        end
+    end   
+    mascara 
+end    
+
+def pede_um_chute_valido(chutes, erros, mascara)
+    cabecalho chutes, erros, mascara
     loop do
         chute = pede_um_chute
         if chutes.include? chute
@@ -20,7 +32,8 @@ def joga(nome)
     pontos_ate_agora = 0
 
     while erros < 5
-        chute = pede_um_chute_valido chutes, erros
+        mascara = palavra_mascarada chutes, palavra_secreta
+        chute = pede_um_chute_valido chutes, erros, mascara 
         chutes << chute
        
         chutou_uma_letra = chute.size == 1
@@ -36,18 +49,18 @@ def joga(nome)
         else
             acertou = chute == palavra_secreta
             if acertou
-                avisa_se_acertou
+                avisa_acertou_palavra
                 pontos_ate_agora += 100
                 break
             else 
-                avisa_se_errou
+                avisa_errou_palavra
                 pontos_ate_agora -= 30
                 erros += 1    
             end
         end   
     end     
 
-    avisa_pontos_ate_agora pontos_ate_agora
+    avisa_pontos pontos_ate_agora
 end    
 
 def jogo_da_forca
