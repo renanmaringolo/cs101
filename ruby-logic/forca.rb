@@ -1,34 +1,4 @@
-def da_boas_vindas
-    puts "Bem vindo ao jogo da Forca."
-    puts "Digite seu nome: "
-    nome = gets.strip
-    puts "Começaremos o jogo para você #{nome}."
-    puts "\n\n\n\n"
-    nome
-end    
-
-def escolhe_palavra_secreta
-    puts "Escolhendo palavra secreta..."
-    palavra_secreta = "programador"
-    puts "A palavra secreta com #{palavra_secreta.size} letras"
-    palavra_secreta
-end    
-
-def nao_quer_jogar?
-    puts "Deseja jogar novamente?"
-    quero_jogar = gets.strip
-    nao_quero_jogar = quero_jogar.upcase == "N"
-end   
-
-def pede_um_chute(chutes, erros)
-    puts "\n\n\n\n"
-    puts "Erros até agora #{erros}."
-    puts "Chutes até agora #{chutes}."
-    puts "Entre com uma letra ou uma palavra"
-    chute = gets.strip
-    puts "Será que acertou? Você chutou #{chute}."
-    chute 
-end    
+require_relative 'ui'
 
 def joga(nome)
     palavra_secreta = escolhe_palavra_secreta
@@ -40,7 +10,7 @@ def joga(nome)
     while erros < 5
         chute = pede_um_chute chutes, erros
         if chutes.include? chute
-            puts "Você já chutou #{chute}"
+            avisa_chute chute
             next
         end   
         chutes << chute
@@ -50,27 +20,26 @@ def joga(nome)
             letra_procurada = chute[0]
            total_encontrado = palavra_secreta.count letra_procurada
             if total_encontrado == 0
-                puts "Letra não encontrada"
+                avisa_letra_nao_encontrada
                 erros += 1
             else 
-                puts "Letra encontrada #{total_encontrado} vezes."
+                avisa_letra_encontrada total_encontrado
             end    
         else
             acertou = chute == palavra_secreta
             if acertou
-                puts "Parabéns, você acertou!"    
+                avisa_se_acertou
                 pontos_ate_agora += 100
                 break
             else 
-                puts "ERROUUUUUUUUU"
+                avisa_se_errou
                 pontos_ate_agora -= 30
                 erros += 1    
             end
         end   
     end     
 
-    puts "Você ganhou #{pontos_ate_agora} pontos."
-
+    avisa_pontos_ate_agora pontos_ate_agora
 end    
 
 nome = da_boas_vindas
