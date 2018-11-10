@@ -1,4 +1,4 @@
-def avisa_chute_efetuado(chute)
+def avisa_chute_efetuado chute 
     puts "Você já chutou #{chute}"
 end
 
@@ -31,12 +31,14 @@ def da_boas_vindas
     nome
 end    
 
-def escolhe_palavra_secreta
+def avisa_escolhendo_palavra
     puts "Escolhendo palavra secreta..."
-    palavra_secreta = "programador"
+end
+
+def avisa_palavra_escolhida palavra_secreta
     puts "A palavra secreta com #{palavra_secreta.size} letras"
     palavra_secreta
-end    
+end 
 
 def nao_quer_jogar?
     puts "Deseja jogar novamente?"
@@ -46,7 +48,7 @@ end
 
 def cabecalho(chutes, erros, mascara)
     puts "\n\n\n\n"
-    puts "Palavra secreta: #{mascara}"
+    puts "Palavra secreta: #{mascara}."
     puts "Erros até agora: #{erros}."
     puts "Chutes até agora: #{chutes}."
 end    
