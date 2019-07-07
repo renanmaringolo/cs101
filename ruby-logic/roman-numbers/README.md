@@ -13,3 +13,8 @@ RomanNumberConverter.convert(100) # resultado deve ser C
 RomanNumberConverter.convert(500) # resultado deve ser D
 RomanNumberConverter.convert(1000) # resultado deve ser M
 ```
+
+Running Tests:
+```
+bundle exec rspec
+```
